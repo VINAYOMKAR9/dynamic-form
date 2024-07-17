@@ -45,8 +45,8 @@ let Form =()=>{
 
 
     let handleDelete=(id)=>{
-        let filteredData = hobby.filter((el)=>el.id == id)
-        console.log(filteredData)
+        let filteredData = hobby.filter((el)=>el.id != id)
+        setHobby(filteredData)
     }
     
  return( 
