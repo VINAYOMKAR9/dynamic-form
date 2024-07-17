@@ -1,4 +1,4 @@
-let HobbyList=({hobby})=>{
+let HobbyList=({hobby, handleDelete})=>{
     return(
             <>
             <h1>My hobbies are :</h1>
@@ -44,10 +44,11 @@ let Form =()=>{
     console.log(text)
 
 
-    let handleDelete=()={
-        
+    let handleDelete=(id)=>{
+        let filteredData = hobby.filter((el)=>el.id == id)
+        console.log(filteredData)
     }
-
+    
  return( 
 
     <div>
