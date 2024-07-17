@@ -1,3 +1,25 @@
+let HobbyList=({hobby})=>{
+    return(
+            <>
+            <h1>My hobbies are :</h1>
+        <div >
+    {
+        hobby.map((el)=>{
+            return(
+            <div key={el.id}>
+                <h3>
+                {el.id} . {el.hobbies}
+                </h3>
+                <button onClick={()=>handleDelete(el.id)}>Delete </button>
+            </div>
+            )
+        })
+    }
+    </div>
+            </>
+    )
+}
+
 
 let Form =()=>{
     const{useState} = React
@@ -21,6 +43,11 @@ let Form =()=>{
     }
     console.log(text)
 
+
+    let handleDelete=()={
+        
+    }
+
  return( 
 
     <div>
@@ -29,16 +56,7 @@ let Form =()=>{
 
     
     <div >
-        {
-            hobby.map((el)=>{
-                return <div>
-                    <h1>
-
-                    {el.id} . {el.hobbies}
-                    </h1>
-                    </div>
-            })
-        }
+        <HobbyList hobby={hobby} handleDelete={handleDelete}/>
     </div>
 
     </div>
